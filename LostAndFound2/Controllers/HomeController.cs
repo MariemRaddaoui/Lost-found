@@ -1,4 +1,5 @@
 ﻿using LostAndFound2.Data;
+using LostAndFound2.Data.UnitOfWork;
 using LostAndFound2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -24,8 +25,9 @@ namespace LostAndFound2.Controllers
             {
                 Debug.WriteLine(ex.Message);
             }
-
-            return View();
+            UnitOfWork unitOfWork = new UnitOfWork(DBContext.Instance);
+            List<Item> items = unitOfWork.ItemRepository.GetLimitedNumber(id, 9).ToList();
+            return View(items);
         }
 
         public IActionResult Privacy()

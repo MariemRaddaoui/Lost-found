@@ -8,7 +8,12 @@ namespace LostAndFound2.Data.UnitOfWork
         private readonly DBContext _dbContext;
         public IUserRepository UserRepository { get ; set; }
         public IItemRepository ItemRepository { get ; set ; }
-
+        public UnitOfWork(DBContext dBContext)
+        {
+            _dbContext = dBContext;
+            UserRepository = new UserRepository(_dbContext);
+            ItemRepository = new ItemRepository(_dbContext);
+        }
         public bool Complete()
         {
             try

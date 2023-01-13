@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+        ViewData["Title"] = "Login Page";
+}
+
+<div>
+    <h1>Welcome dear user</h1>
+    <h2>Have a nice experience</h2>
+</div>
+<div>
+    @using (Html.BeginForm("Login" , "User" , FormMethod.Post))
+    {
+        @Html.Label("Name :")
+        @Html.TextBox("Name")
+        <br/>
+        @Html.Label("Password :")
+        @Html.Password("Password")
+    }
+</div>

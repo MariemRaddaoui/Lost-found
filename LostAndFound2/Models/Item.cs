@@ -18,13 +18,17 @@ namespace LostAndFound2.Models
         public string Color { get; set; }
         [Required]
         public string PhotoLink { get; set; }
-        public Item(int id, string name, string description, string color, string photoLink)
+        public string Category { get; set; }    
+        public string OwnerName { get; set; }
+        public Item(int id, string name, string description, string color, string photoLink , string ownerName, string category)
         {
             this.Id = id;
             this.Name = name;
             this.Description = description;
             this.Color = color;
             this.PhotoLink = photoLink;
+            this.OwnerName = ownerName;
+            this.Category = category;
         }
     }
 }
