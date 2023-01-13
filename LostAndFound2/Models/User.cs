@@ -18,14 +18,14 @@ namespace LostAndFound2.Models
         public string Password { get; set; }
         public long Phone { get; set; }
 
-        public List<Item> Items {get; set; }
-        
-        public User (string name, string password, long phone)
+        public List<Item> Items { get; set; }
+
+        public User(string name, string password, long phone)
         {
             this.Name = name;
             this.Password = password;
             this.Phone = phone;
-            this.Items = new List<Item> ();
+            this.Items = new List<Item>();
         }
     }
 }

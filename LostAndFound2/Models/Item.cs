@@ -18,7 +18,6 @@ namespace LostAndFound2.Models
         public string Color { get; set; }
         [Required]
         public string PhotoLink { get; set; }
-
         public Item(int id, string name, string description, string color, string photoLink)
         {
             this.Id = id;

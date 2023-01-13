@@ -14,10 +14,17 @@ namespace LostAndFound2.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             var context = DBContext.Instance;
-            context.Database.EnsureCreated();
+            try
+            {
+                context.Database.EnsureCreated();
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
             return View();
         }
 
