@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add Item";
+}
+
+<div>
+    <h1>Welcome dear user</h1>
+    <h2>Fill the form to add new items</h2>
+</div>
+<div>
+    @using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Label("Name :")
+        @Html.TextBox("Name")
+        <br />
+        @Html.Label("color :")
+        @Html.TextBox("Color")
+        <br />
+        @Html.Label("Category :")
+        <select name="Category">
+            <option value="identity_card">Identity cards</option>
+            <option value="Phone">Phone</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Electronics">Electronics</option>
+        </select>
+        <br/>
+        @Html.Label("Description :")
+        @Html.TextArea("Description")
+        <br />
+        @Html.Label("Item image link:")
+        @Html.TextArea("Image_link")
+        <button type="submit">Sign up</button>
+    }
+</div>

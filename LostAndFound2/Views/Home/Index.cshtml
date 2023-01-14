@@ -1,24 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Items Page";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Items List</h1>
-      @foreach(item in Items) {
-        <div class="card mb-3 ">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="${@item.PhotoLink}" class="img-fluid" />
-    <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-    </a>
-  </div>
+<h1>Alost object become quickly a found object with us</h1>
 
-  <div class="card-body">
-    <h5 class="card-title">@item.Name</h5>
-    <p class="card-text">@item.Description</p>
-  </div>
-  <div class="card-footer">@item.Date, By @item.OwnerName</div>
-</div>
-      }
-</div>
-
+<h2>Did you lost an object you can find him in our website</h2>
+<h2>Did you find a lost object, post it in our website</h2>

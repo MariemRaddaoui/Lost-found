@@ -19,15 +19,13 @@ namespace LostAndFound2.Models
         [Required]
         public string PhotoLink { get; set; }
         public string Category { get; set; }    
-        public string OwnerName { get; set; }
-        public Item(int id, string name, string description, string color, string photoLink , string ownerName, string category)
+        public User Owner { get; set; }
+        public Item(string name, string description, string color, string photoLink , string category)
         {
-            this.Id = id;
             this.Name = name;
             this.Description = description;
             this.Color = color;
             this.PhotoLink = photoLink;
-            this.OwnerName = ownerName;
             this.Category = category;
         }
     }

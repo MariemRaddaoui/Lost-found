@@ -7,8 +7,8 @@ namespace LostAndFound2.Data
 {
     public class DBContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Item> Item { get; set; }
         private static DBContext? _Singleton;
         private DBContext(DbContextOptions o) : base(o) { }
         private static DBContext Instantiate_DBContext()

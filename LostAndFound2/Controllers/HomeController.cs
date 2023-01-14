@@ -25,9 +25,8 @@ namespace LostAndFound2.Controllers
             {
                 Debug.WriteLine(ex.Message);
             }
-            UnitOfWork unitOfWork = new UnitOfWork(DBContext.Instance);
-            List<Item> items = unitOfWork.ItemRepository.GetLimitedNumber(id, 9).ToList();
-            return View(items);
+            
+            return View();
         }
 
         public IActionResult Privacy()
