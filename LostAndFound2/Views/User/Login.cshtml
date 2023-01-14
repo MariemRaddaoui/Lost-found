@@ -2,22 +2,56 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-        ViewData["Title"] = "Login Page";
+        ViewData["Title"] = "LOGIN";
 }
 
-<div>
-    <h1>Welcome dear user</h1>
-    <h2>Have a nice experience</h2>
-</div>
-<div>
-    @using (Html.BeginForm("Login" , "User" , FormMethod.Post))
-    {
-        @Html.Label("Name :")
-        @Html.TextBox("Name")
-        <br/>
-        @Html.Label("Password :")
-        @Html.Password("Password")
-        <br/>
-        <button type="submit">Log in</button>
-    }
-</div>
+
+<section>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3" style="background: #84fab0; background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5)); background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));padding: 3%;">
+    <div class="container" >
+      <div class="row d-flex justify-content-center align-items-center " >
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5" style="color: DarkCyan ;">Please Sign In</h2>
+
+                @using (Html.BeginForm("Login" , "User" , FormMethod.Post))
+                {
+                    <div class="form-outline mb-2">
+                        <input type="email" id="email" placeholder="Enter Your Email" name="email" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2, 4}$" class="form-control form-control-lg" required />
+                        <label class="form-label" for="email"></label>
+                    </div>
+
+                    <div class="form-outline mb-0">
+                        <input type="password" id="pass" placeholder="Enter Your Password" class="form-control form-control-lg" required/>
+                        <label class="form-label" for="pass"></label>
+                    </div>
+
+    
+                    <div class="form-check d-flex justify-content-start mb-0 "  >
+                        <input class="form-check-input me-2" type="checkbox" value="" id="remeber" />
+                        <label class="form-check-label" for="remember">Remember Me</label>
+                    </div>
+                  
+                    <p class="mb-5" style="text-align: justify; -moz-text-align-last: right; text-align-last: right;">
+                        <a href="#!" class="fw-bold text-body "><u>Forgot Your Password ?</u></a>
+                    </p>
+
+                
+                    <div class="d-flex justify-content-center mb-3">
+                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body "  style="background: #84fab0; background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1)); background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))">LOGIN</button>
+                    </div>
+
+                    <p class="text-center text-muted mt-2 mb-1">You don't have an account? 
+                        <a href="#!"class="fw-bold text-body"><u>SignUp here</u></a>
+                    </p>
+
+                }
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
